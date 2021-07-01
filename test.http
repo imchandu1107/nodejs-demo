@@ -1,0 +1,43 @@
+GET http://localhost:3000/user/getusers
+
+
+###
+GET http://localhost:3000/user/getuser/<username>
+
+
+###
+POST http://localhost:3000/user/createuser
+Content-Type: application/json
+
+{
+    "username":"",
+    "emailid":"",
+    "password":"",
+    "city":""
+}
+
+
+###
+PUT http://localhost:3000/user/updateuser
+Content-Type: application/json
+
+{
+    "username":"",
+    "emailid":"",
+    "password":"",
+    "city":""
+}
+
+
+###
+DELETE http://localhost:3000/user/deleteuser/<username>
+
+
+###
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "username":"",
+    "password":""
+}

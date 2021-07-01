@@ -9,6 +9,11 @@ const userApi = require( "./APIS/user-api" )
 //executing specific API based on url
 app.use( "/user", userApi )
 
+//invalid url
+app.use( ( req, res, next ) => {
+    res.send( { message: `path ${req.url} is invalid` } )
+})
+
 //error handling middlewares
 app.use( ( err, req, res, next ) => {
     res.send( { message: `Error is ${err.message}` } )
