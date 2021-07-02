@@ -111,10 +111,10 @@ userApi.put( "/updateuser", expressErrorHandler( async ( req, res ) => {
     }
 
     else {
-        if ( modifiedUser.password !== modUser.password ) {
-            modifiedUser.password = await bcryptjs.hash( modifiedUser.password, 7 )
-        }
+        //hash the password
+        modifiedUser.password = await bcryptjs.hash( modifiedUser.password, 7 )
         
+        //update user object to database
         await userCollectionObj.updateOne( { username: modifiedUser.username }, { $set: { ...modifiedUser } } )
         res.send( { message: "User details updated" } )
     }
